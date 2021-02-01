@@ -1,0 +1,60 @@
+class Node:
+
+  def __init__(self,value):
+    self.data = value
+    self.next = None
+    
+class stack:
+
+  def __init__(self):
+    self.top = None
+
+  def push(self,value):
+
+    new_node = Node(value)
+    new_node.next = self.top
+    self.top = new_node
+
+  def pop(self):
+
+    if self.top is None:
+      return"Stack empty"
+    else:
+      print(self.top.data)
+      self.top = self.top.next
+      
+
+  def is_empty(self):
+    return self.top == None
+    
+
+  def peek(self):
+
+     if self.top is None:
+       return "Stack empty"
+     else:
+       return self.top.data
+
+  def traverse(self):
+
+     temp = self.top
+
+     while temp is not None:
+       print(temp.data,end= ' ')
+       temp = temp.next
+
+  def reverse_string(string):
+    s = stack()
+    for i in string:
+
+      s.push(i)
+
+    res = ""
+
+    while (not s.is_isempty()):
+      res = res + s.pop()
+
+      print(res)    
+    
+    
+    
