@@ -1,0 +1,43 @@
+class Queue:
+
+  def __init__(self, size):
+
+    self.size = size
+    self.queue = [None] * self.size
+    self.front = -1
+    self.rear = -1
+    
+  def  enqueue(self,value):
+
+    if self.rear == self.size - 1:
+      return "Queue Full"
+    else:
+      self.rear+=1
+      self.queue[self.rear] = value
+
+  def front_item(self):
+    if self.rear == self.front:
+      return "Empty"
+    else:
+      return self.queue[self.front + 1]
+
+
+  def rear_item(self):
+    if self.rear == self.front:
+      return "Empty"
+    else:
+      return self.queue[self.rear]
+         
+
+  def dequeue(self):
+
+    if self.rear == self.front:
+      return "Queue Empty"
+    else:
+      self.queue.pop(self.front + 1)
+      self.front+=1
+
+  def traverse(self):
+
+    for i in range(self.front + 1 , self.rear + 1):
+      print(self.queue[i],end= ' ')
