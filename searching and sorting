@@ -1,0 +1,45 @@
+def linear_search(L,item):
+
+  for i in range(len(L)):
+    if item == L[i]:
+      return i
+  return -1    
+  
+  def binary_search(L, low, high,item):
+
+  print("low=",low,"high=",high,end = " " )
+  if low<=high:
+
+    mid = (low + high)//2
+    print("mid=",mid,end= ' ')
+    print("Item at mid",L[mid])
+
+    if L[mid] == item:
+      return mid
+
+    elif L[mid] > item:
+
+      return binary_search(L, low,mid-1,item)
+
+    else:
+
+      return binary_search(L,mid+1,high,item)
+
+  else:
+
+      return -1  
+      
+      def bubble_sort(arr):
+
+  for i in range(len(arr)-1):
+    flag = 0
+    for j in range(len(arr)-1 -i):
+      if arr[j] > arr[j+1]:
+        #swap
+        arr[j],arr[j+1] = arr[j+1],arr[j]
+        flag = 1
+
+    if flag == 0:
+       break
+
+  print(arr)       
